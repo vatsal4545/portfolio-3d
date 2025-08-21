@@ -4,6 +4,7 @@ import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { github } from "../assets";
+import { play } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
@@ -15,7 +16,18 @@ const ProjectCard = ({
   tags,
   image,
   source_code_Link,
+  backend_link,
+  demo_link,
 }) => {
+  const handleGitHubClick = () => {
+    // Open frontend repository
+    window.open(source_code_Link, "_blank");
+    // Open backend repository if it exists
+    if (backend_link) {
+      setTimeout(() => window.open(backend_link, "_blank"), 100);
+    }
+  };
+
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
@@ -28,16 +40,39 @@ const ProjectCard = ({
             alt={name}
             className="w-full h-full object-cover rounded-2xl"
           />
-          <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-            <div
-              onClick={() => window.open(source_code_Link, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-            >
-              <img
-                src={github}
-                alt="github"
-                className="w-1/2 h-1/2 object-contain"
-              />
+          <div className="absolute inset-0 flex justify-between m-3 card-img_hover">
+            {/* Left side - Demo link */}
+            {demo_link && (
+              <div
+                onClick={() => window.open(demo_link, "_blank")}
+                className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+                title="Watch Demo"
+              >
+                <img
+                  src={play}
+                  alt="demo"
+                  className="w-1/2 h-1/2 object-contain"
+                />
+              </div>
+            )}
+
+            {/* Right side - GitHub links */}
+            <div className="flex gap-2">
+              <div
+                onClick={handleGitHubClick}
+                className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+                title={
+                  backend_link
+                    ? "Open Frontend & Backend Repositories"
+                    : "Open Repository"
+                }
+              >
+                <img
+                  src={github}
+                  alt="github"
+                  className="w-1/2 h-1/2 object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>

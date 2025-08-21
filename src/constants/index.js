@@ -33,6 +33,9 @@ import {
   aws,
   express,
   django,
+  whissle,
+  languagetutor,
+  deepplaylist,
 } from "../assets";
 
 export const navLinks = [
@@ -146,21 +149,36 @@ const technologies = [
 
 const experiences = [
   {
+    title: "Founding Software Engineer",
+    company_name: "Whissle INC",
+    icon: whissle,
+    iconBg: "#383E56",
+    date: "September 2024 - Present",
+    points: [
+      "Architected real-time audio streaming pipeline with WebSocket integration handling Twilio calls and web clients, processing diverse audio formats (mu-law, raw chunks) with sub-200ms latency for 2000+ concurrent sessions",
+      "Implemented text summarization service with retry logic managing external API timeouts and usage tracking, reducing processing failures by 85% through intelligent error recovery",
+      "Integrated Stripe payment processing handling $50K+ monthly transactions with 99.9% accuracy",
+      "Designed transactional credit management system with atomic database operations, granular per-service pricing calculations, and credit threshold enforcement middleware preventing service overuse",
+      "Implemented voice-to-voice conversation pipeline chaining Speech-to-Text → LLM → Text-to-Speech in real-time, ensuring seamless data transfer and comprehensive error handling across multiple AI services",
+      "Created comprehensive usage tracking infrastructure logging detailed service metrics (transcription, TTS, translation, chat) including input/output units, processing time, and model usage for billing analytics managing $50K+ monthly transactions",
+      "Developed RESTful APIs using Node.js and Express, deployed backend server on AWS EC2, with DynamoDB database and AWS S3 storage",
+      "Conducted user research, designed dashboards in Figma, created UX frameworks, personas, journey maps, wireframes, and prototypes",
+      "Developed dynamic real-time transcript visualization with client-side NER entity colorization, emotion/intent detection, and age/gender analysis providing rich interactive user experience",
+      "Built secure API gateway patterns with authentication middleware and rate limiting, protecting backend services from 500+ daily malicious requests while maintaining 99.9% legitimate traffic flow",
+      "Integrated Google Cloud Storage with secure file handling using multer middleware for efficient uploads, stream processing, filename sanitization, and public URL generation for audio/JSON files",
+    ],
+  },
+  {
     title: "Full stack Developer",
     company_name: "Varni Technology",
     icon: varni,
     iconBg: "#383E56",
     date: "July 2021 - July 2022",
     points: [
-      "Led development initiatives using Next.js, Three.js, and React Native, contributing to the successful delivery of custom applications for clients.",
-      "Utilized JavaScript ES6 and asynchronous libraries, such as Datatables.js, to create dynamic and high-performance frontend features.",
-      "Developed interactive user interfaces with HTML, CSS, and React, ensuring seamless user experiences and efficient data visualization.",
-      "Implemented Azure AD for secure authentication and single sign-on capabilities, enhancing application security and user convenience.",
-      "Designed and optimized Microsoft SQL Server databases, employing Entity Framework and T-SQL stored procedures for efficient data management.",
-      "Collaborated with cross-functional teams on Azure DevOps Repos and GitHub, maintaining version control and enabling smooth code integration.",
-      "Conducted comprehensive unit testing using MSTest, ensuring reliable and error-free code for robust software applications.",
-      "Worked with clients to understand their requirements, translating business needs into functional and technical specifications.",
-      "Leveraged MongoDB for efficient NoSQL database management, ensuring scalable and flexible data storage solutions.",
+      "Developed scalable, responsive web applications using Vue.js and Node.js, improving application speed and supporting over 20,000 active users across desktop and mobile.",
+      "Engineered backend services and database schemas with MongoDB, optimizing data access and reducing API response time by 35%.",
+      "Integrated Stripe for automated subscription billing, utilizing webhooks and retry logic to achieve 99.5% transaction accuracy and reduce failed payments.",
+      "Built secure, modular RESTful APIs and implemented role-based access control (RBAC) to ensure data privacy and enable content delivery.",
     ],
   },
 
@@ -171,16 +189,10 @@ const experiences = [
     iconBg: "#E6DEDD",
     date: "Jan 2019 - June 2021",
     points: [
-      "Spearheaded the development of mission-critical web applications using C#, .NET Core, and ASP.NET MVC, delivering seamless user experiences to customers.",
-      "Utilized Visual Studio IDE and Git to manage version control, ensuring efficient collaboration and code management within the development team.",
-      "Developed and executed unit tests using Xunit, maintaining code quality and enabling continuous integration with Azure DevOps Boards",
-      "Collaborated on Azure DevOps Repos and GitHub for code repositories and continuous deployment, streamlining development workflows.",
-      "Designed and maintained Microsoft SQL Server databases, implementing Entity Framework and T-SQL stored procedures for optimal data storage and retrieval.",
-      "Implemented ETL processes, transforming and loading data efficiently, supporting robust business intelligence solutions.",
-      "Created responsive and modern frontends with HTML, CSS, JavaScript, React, and Bootstrap, enhancing user interactions and visual appeal.",
-      "Integrated OAuth 2.0 for secure user authentication and authorization, ensuring data privacy and compliance with industry standards.",
-      "Leveraged Microsoft Azure services for hosting and managing applications in a scalable and secure cloud environment.",
-      "Developed RESTful APIs with JSON format, extensively documented with Open API (Swagger), fostering clear communication between teams.",
+      "Streamlined and maintained a cross-platform mobile application using React Native and Expo Go, delivering seamless UX with 99.9% uptime for over 10,000+ users.",
+      "Collaborated with product and QA teams to implement new feature rollouts and user feedback loops, resulting in a 25% improvement in app usability and customer satisfaction.",
+      "Deployed and scaled applications using AWS (EC2, S3, Route 53), maintaining 99.99% uptime during a 50% year-over-year traffic increase.",
+      "Created reusable front-end components and optimized mobile performance, reducing app load time by 40% and improving retention rates.",
     ],
   },
 
@@ -241,54 +253,73 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Amazon Clone",
+    name: "Video AI Tutor",
     description:
-      "An Amazon clone website replicates Amazon's core features, offering product listings, shopping carts, payment options, and order tracking. It delivers a similar online shopping experience by emulating the essential functionalities and user interface of Amazon's e-commerce platform.",
+      "AI-powered language learning application featuring an intelligent avatar that teaches fluent English through real-time video interaction. Combines Azure Speech Services, OpenAI GPT, and Tavus AI for personalized coaching with instant pronunciation feedback, structured learning phases, and real-time speech analysis achieving 85% accuracy threshold.",
     tags: [
       {
-        name: "react",
+        name: "React",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "TypeScript",
         color: "green-text-gradient",
       },
       {
-        name: "firebase",
+        name: "Azure AI",
         color: "pink-text-gradient",
       },
+      {
+        name: "OpenAI GPT",
+        color: "orange-text-gradient",
+      },
+      {
+        name: "Tavus AI",
+        color: "purple-text-gradient",
+      },
     ],
-    image: amazon,
-    source_code_Link: "https://github.com/vatsal4545/A-ZClone4545",
+    image: languagetutor, // You can replace this with a language tutor image later
+    source_code_Link:
+      "https://github.com/vatsal4545/fluent-ai-avatar-chat-9f2c5efb",
   },
   {
-    name: "Ai-Chatbot",
+    name: "DeepPlayList",
     description:
-      "An AI chatbot is a conversational tool that uses artificial intelligence to understand and generate human-like text. It helps users by answering questions, providing information, and engaging in natural dialogue, using natural language processing (NLP) to deliver context-aware responses.",
+      "AI-Powered Book-to-Music Playlist Generator that analyzes books using Google Gemini AI 2.0 Flash to create contextually relevant music playlists. Features dual music API integration (Spotify & YouTube), intelligent book analysis with 96% accuracy, and real-time playlist generation based on themes, characters, and emotional content.",
     tags: [
       {
-        name: "react",
+        name: "Python",
         color: "blue-text-gradient",
       },
       {
-        name: "spline",
+        name: "FastAPI",
         color: "green-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "React Native",
         color: "pink-text-gradient",
       },
+      {
+        name: "Gemini AI",
+        color: "orange-text-gradient",
+      },
+      {
+        name: "Firestore",
+        color: "purple-text-gradient",
+      },
     ],
-    image: chatbot,
-    source_code_Link: "https://github.com/vatsal4545/Ai-Chatbot",
+    image: deepplaylist, // You can replace this with a deepplaylist image later
+    source_code_Link: "https://github.com/WhissleAI/DeepPlaylistApp",
+    backend_link: "https://github.com/WhissleAI/deep-playlist",
+    demo_link: "https://music.whissle.ai/",
   },
   {
     name: "NutriScan",
     description:
-      "This project combines a Python backend and a React Native frontend to classify food products using Nutri-Score values. It employs a TensorFlow Lite model to assess healthiness from barcode scans, with the mobile app facilitating easy product identification through camera access.",
+      "A full-stack food classification system with Python backend API and React Native mobile app. Uses TensorFlow Lite neural network to predict Nutri-Score healthiness classes from barcode scans. Features real-time camera barcode detection, nutrition analysis, and health recommendations.",
     tags: [
       {
-        name: "react-Native",
+        name: "React Native",
         color: "blue-text-gradient",
       },
       {
@@ -296,12 +327,18 @@ const projects = [
         color: "green-text-gradient",
       },
       {
-        name: "ANN",
+        name: "TensorFlow",
         color: "pink-text-gradient",
+      },
+      {
+        name: "API",
+        color: "orange-text-gradient",
       },
     ],
     image: nutriscan,
-    source_code_Link: "https://github.com/vatsal4545/NutriScan",
+    source_code_Link: "https://github.com/vatsal4545/Nutri-front",
+    backend_link: "https://github.com/vatsal4545/Nutri-back",
+    demo_link: "https://youtu.be/tq8Xhff16W0",
   },
 ];
 

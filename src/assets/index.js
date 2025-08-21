@@ -6,6 +6,7 @@ import web from "./web.png";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
+import play from "./play.svg";
 
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
@@ -32,12 +33,15 @@ import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 import amnex from "./company/amnex.png";
 import varni from "./company/varni.png";
+import whissle from "./company/whissle.png";
 
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 import nutriscan from "./nutriscan.png";
 import carrent from "./carrent.png";
 import chatbot from "./chatbot.png";
+import languagetutor from "./languagetutor.png";
+import deepplaylist from "./deepplaylist.png";
 
 import amazon from "./amazon.png";
 
@@ -50,6 +54,7 @@ export {
   github,
   menu,
   close,
+  play,
   css,
   docker,
   figma,
@@ -80,4 +85,7 @@ export {
   azure,
   express,
   django,
+  whissle,
+  languagetutor,
+  deepplaylist,
 };
